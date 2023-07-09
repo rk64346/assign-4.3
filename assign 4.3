@@ -1,0 +1,348 @@
+{
+ "cells": [
+  {
+   "cell_type": "raw",
+   "id": "80349529-4801-442e-8019-f4fc65ceac4c",
+   "metadata": {},
+   "source": [
+    "Q1- what is abstraction in oops? explain with an example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "0d1c302c-f633-40e7-8743-5b4a6d47f61d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from abc import ABC , abstractmethod\n",
+    "class pwskills(ABC):## HERE I HAVE CREATED CLASS\n",
+    "    def __init__(self,name,phone_num):\n",
+    "        self.name = name\n",
+    "        self.phone_num  = phone_num\n",
+    "        \n",
+    "    @abstractmethod# USED ABSTRACTION METHOD\n",
+    "    def student_details(self):\n",
+    "        pass\n",
+    "        \n",
+    "        \n",
+    "    \n",
+    "class students( pwskills):# CREATED AN object HERE,\n",
+    "    def student_details(self,):\n",
+    "        print(\"name:\" , self.name)\n",
+    "        print(\"ph-num:\", self.phone_num)\n",
+    "        \n",
+    " \n",
+    "        \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "56759081-6b7b-4a49-88e9-6f71fed59986",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pw = students(\"chotu\",919191919)# CREATED instance "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "0512f11c-76f6-41f7-9f7a-ea629af93277",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name: chotu\n",
+      "ph-num: 919191919\n"
+     ]
+    }
+   ],
+   "source": [
+    "pw.student_details()"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "3aa47596-61e1-4a46-b97f-3a7bd8b02051",
+   "metadata": {},
+   "source": [
+    "Q2- difference between abstraction and encapsulation.explain with an example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "f1be42f9-c7ae-4411-bdb8-32b26ecac917",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from abc import ABC , abstractmethod\n",
+    "class pwskills(ABC):## HERE I HAVE CREATED CLASS& ENCAPSULATED IT\n",
+    "    def __init__(self,name,phone_num):\n",
+    "        self._name = name\n",
+    "        self._phone_num  = phone_num\n",
+    "        \n",
+    "    @abstractmethod# USED ABSTRACTION METHOD\n",
+    "    def student_details(self):\n",
+    "        pass\n",
+    "        \n",
+    "        \n",
+    "    \n",
+    "class students( pwskills):# CREATED AN object HERE,\n",
+    "    def student_details(self):\n",
+    "        print(\"name:\" , self._name)\n",
+    "        print(\"ph-num:\", self._phone_num)\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "83ce7588-b222-4c74-b0d3-a12e5ee5ff1d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pw = students(\"chotu\",919191919)# CREATED instance "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "c41c3351-ae04-4218-b416-eeafcf0172ca",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name: chotu\n",
+      "ph-num: 919191919\n"
+     ]
+    }
+   ],
+   "source": [
+    "pw.student_details()"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "e94403b8-9a93-4a9a-ba91-4fef1713fa8c",
+   "metadata": {},
+   "source": [
+    "Q3- WHAT IS abc module in pyhon? why it is used?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "b17b6feb-e92b-490e-b700-5ed31cef0464",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "naam: jamun\n",
+      "rang: voilet\n"
+     ]
+    }
+   ],
+   "source": [
+    "\"\"\"The abc module in Python provides the infrastructure for defining abstract base classes (ABCs). Abstract base classes are classes that cannot be instantiated directly but serve as a blueprint for other classes to inherit from.\n",
+    "\n",
+    "Here are some key concepts and features of the abc module:\n",
+    "\n",
+    "Abstract Base Class (ABC):\n",
+    "\n",
+    "An abstract base class is a class that cannot be instantiated.\n",
+    "It typically defines a common interface and may contain abstract methods.\n",
+    "ABCs are defined by subclassing the ABC class from the abc module.\"\"\"\n",
+    "from abc import ABC, abstractmethod\n",
+    "class sabjiwala(ABC):\n",
+    "    def __init__(self, name,colour):\n",
+    "        self._name = name\n",
+    "        self._colour = colour\n",
+    "    @abstractmethod    \n",
+    "    def fruits_details(self):\n",
+    "        pass\n",
+    "class fruits(sabjiwala):\n",
+    "    def fruits_details(self):\n",
+    "        print(\"naam:\", self._name)\n",
+    "        print(\"rang:\", self._colour)\n",
+    "        \n",
+    "sbji = fruits(\"jamun\",\"voilet\")\n",
+    "sbji.fruits_details()\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "8d4a1d85-6bdb-4b96-af4f-9ca697bf59b1",
+   "metadata": {},
+   "source": [
+    "Q4-  how can we achieve data abstraction?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "ada6db94-92b9-4cad-bad9-979d9d952293",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'int' object is not callable",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[41], line 17\u001b[0m\n\u001b[1;32m     15\u001b[0m obj \u001b[38;5;241m=\u001b[39m dataAbstraction()\n\u001b[1;32m     16\u001b[0m \u001b[38;5;66;03m# acceces the private data with getter method\u001b[39;00m\n\u001b[0;32m---> 17\u001b[0m \u001b[43mobj\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mprivate_data\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n",
+      "\u001b[0;31mTypeError\u001b[0m: 'int' object is not callable"
+     ]
+    }
+   ],
+   "source": [
+    "class dataAbstraction:\n",
+    "    def __init__(self):\n",
+    "        self._private_data = 22\n",
+    "    @property  \n",
+    "    def private_data(self):\n",
+    "        return self._private_data\n",
+    "    @private_data.setter\n",
+    "    def private_data(self, value):\n",
+    "         self._private_data = value\n",
+    "            \n",
+    "    def computed_data(self):\n",
+    "        return self._private_data *5\n",
+    "    \n",
+    "# craeting instance for the parent class:\n",
+    "obj = dataAbstraction()\n",
+    "# acceces the private data with getter method\n",
+    "obj.private_data()\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "81bfd7f6-6afa-4b86-8f3c-d0f0104447c1",
+   "metadata": {},
+   "source": [
+    "Q5- can we create an instance of an abstract class? explain  your answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "4397310e-e71a-4f1c-8ef5-c7a250991b5f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "22\n"
+     ]
+    }
+   ],
+   "source": [
+    "class dataAbstraction:\n",
+    "    def __init__(self):\n",
+    "        self._private_data = 22\n",
+    "        \n",
+    "    def get_private_data(self):\n",
+    "        return self._private_data\n",
+    "    def set_private_data(self, value):\n",
+    "         self._private_data = value\n",
+    "    def computed_data(self):\n",
+    "        return self._private_data *2/1\n",
+    "    \n",
+    "# craeting instance for the parent class:\n",
+    "obj = dataAbstraction()\n",
+    "# acceces the private data with getter method\n",
+    "print(obj.get_private_data())\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "6e24de70-a09d-4a19-b325-1f2c29d783cd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "##NOW SETTING DATA THROUGH SETTER METHOD\n",
+    "obj.set_private_data(11)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "9fade711-fc7e-4d07-bb9f-8ca42447953b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "11\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(obj.get_private_data())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "9b187f99-ed0e-41b8-89ab-38fbd8aea710",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "22.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(obj.computed_data())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a7c94832-b5f3-44f0-862d-b14a66d49bd0",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
